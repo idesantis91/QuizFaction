@@ -1,12 +1,13 @@
 import './App.css';
 import React from 'react';
-import Login from './components/Login'
+import Copyright from './components/Copyright'
 import Dashboard from './components/Dashboard'
+import SignIn from './components/Copyright';
 
 function App() {
   return (
     <div>
-      <Dashboard/>
+        <SignIn/>
     </div>
   );
 }
