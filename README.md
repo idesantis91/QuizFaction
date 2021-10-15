@@ -5,6 +5,12 @@ Created By: Isaiah DeSantis
 Quiz Faction is a fresh take on Quiz applications! 
 That allows students to create an account and join a faction to help study for classes or have intense quiz battles to be number one on the faction leaderboard!
 
+## Contribute to application
+- Fork Repo 
+- Clone fork 
+- Add remote git (git remote add origin [git fork url])
+- Add remote git (git remote add upstream [git master url])
+
 ## Run Instructions
 You will need:
 - Nodejs
