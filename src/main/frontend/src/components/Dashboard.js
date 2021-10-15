@@ -1,47 +1,53 @@
-// import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import React, {useState, useEffect} from 'react'
+import AccountService from '../services/AccountService';
 
-// const Dashboard = () => {
-//   state = {
-//     isLoading: true,
-//     groups: []
-//   };
+function Dashboard() {
 
-//   useEffect(() => {
-//       effect
-//       return () => {
-//           cleanup
-//       }
-//   }, [input]){
-//     const response = await fetch('/api/groups');
-//     const body = await response.json();
-//     this.setState({ groups: body, isLoading: false });
-//   }
+    const [employees, setEmployees] = useState([])
 
-//   render() {
-//     const {groups, isLoading} = this.state;
+    useEffect(() => {
+        getEmployees()
+    }, [])
 
-//     if (isLoading) {
-//       return <p>Loading...</p>;
-//     }
+    const getEmployees = () => {
 
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <div className="App-intro">
-//             <h2>JUG List</h2>
-//             {groups.map(group =>
-//               <div key={group.id}>
-//                 {group.name}
-//               </div>
-//             )}
-//           </div>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
+        AccountService.getEmployees().then((response) => {
+            setEmployees(response.data)
+            console.log(response.data);
+        });
+    };
 
-// export default App;
+    return (
+        <div className = "container">
+            
+            <h1 className = "text-center"> Employees List</h1>
+
+            <table className = "table table-striped">
+                <thead>
+                    <tr>
+                        <th> Account Username</th>
+                        <th> Account Password</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {
+                        employees.map(
+                                employee =>
+                                <tr key = {employee.username}>
+                                    <td> {employee.username}</td>
+                                    <td> {employee.password}</td>
+                                </tr>
+                        )
+                    }
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+    )
+}
+
+export default Dashboard;
