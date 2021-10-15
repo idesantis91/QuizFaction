@@ -15,6 +15,7 @@ That allows students to create an account and join a faction to help study for c
 You will need:
 - Nodejs
 - Java 11
+- MongoDB
 - Clone Repo
 - cd into frontend project folder and run npm install
 - Run the springboot service first (QuizApplication.java)
