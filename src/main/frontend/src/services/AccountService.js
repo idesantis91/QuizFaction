@@ -1,15 +1,17 @@
 import axios from 'axios';
 
-const ACCOUNT_API_BASE_URL = 'http://localhost:7070/list';
-
 class AccountService{
 
     getEmployees(){
-        return axios.get(ACCOUNT_API_BASE_URL + '/' + 'list');
+        return axios.get("http://localhost:7070/list");
     }
 
     createAccount(account){
         return axios.post("http://localhost:7070/create", account);
+    }
+
+    createFaction(faction){
+        return axios.post("http://localhost:7070/create" , faction)
     }
 }
 

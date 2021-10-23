@@ -1,8 +1,9 @@
 package com.idev.demo.controllers;
 
-import com.idev.demo.models.Account;
+import com.idev.demo.models.Faction;
 import com.idev.demo.repositories.AccountRepository;
 import com.idev.demo.services.AccountService;
+import com.idev.demo.services.FactionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,27 +17,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("http://localhost:3000/")
-public class AuthenticationController {
+public class FactionController {
 
     @Autowired
     AccountRepository accountRepository;
 
     @Autowired
-    private AccountService accountService;
+    private FactionService factionService;
 
-    @PostMapping("/create")
-    public ResponseEntity<?> createAccount(@RequestBody Account account) {
-        return accountService.createAccount(account);
+    @PostMapping("/faction/create")
+    public ResponseEntity<?> createFaction(@RequestBody Faction faction) {
+        return factionService.createFaction(faction);
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<?> getAccount() {
-        return accountService.getAccounts();
+    @GetMapping("/faction/list")
+    public ResponseEntity<?> getFactions() {
+        return factionService.getFactions();
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> deleteAccount(@RequestParam(value = "username") String username) {
-        return accountService.deleteAccount(username);
+    @DeleteMapping("/faction/delete")
+    public ResponseEntity<?> deleteFaction(@RequestParam(value = "factionName") String name) {
+        return factionService.deleteFaction(name);
     }
 
 }

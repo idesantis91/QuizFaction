@@ -1,4 +1,4 @@
-package com.idev.demo;
+package com.idev.demo.services;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class QuizService {
+public class AccountService {
 
     @Autowired
     private AccountRepository accountRepository;

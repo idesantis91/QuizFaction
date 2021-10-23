@@ -3,15 +3,33 @@ import { Paper, withStyles, Typography, TextField, Button } from '@material-ui/c
 import AccountService from '../services/AccountService';
 
 const styles = theme => ({
-    margin: {
-        margin: theme.spacing.unit * 2,
-    },
-    padding: {
-        padding: theme.spacing.unit
-    }
+  root: {
+    backgroundColor: "#E1FAFA",
+    alignItems:"center",
+    justifyContent:"center",
+    minHeight: '100vh',
+    margin: "auto",
+    display: "flex"
+  },
+  container:{
+    justifyContent:"center",
+    backgroundColor: "#96C3D7",
+    alignItems:"center",
+    borderRadius: "10px",
+    minHeight: "500px",
+    minWidth: "500px",
+    display:"grid",
+    margin: "auto"
+  },
+  button:{
+    justifyContent:"center",
+    alignItems:"center",
+    display: "flex",
+    margin: "auto"
+  }
 });
 
-class LoginTab extends React.Component {
+class CreateTab extends React.Component {
 
   
   constructor(props) {
@@ -55,7 +73,7 @@ class LoginTab extends React.Component {
         return( <div >
           <Paper className={classes.root}>
               <form className={classes.container} onSubmit={this.handleSubmit} >
-                  <TextField                    
+                  <TextField className={classes.divider}                   
                       id={"username"}
                       placeholder="username"
                       onInput={this.onChangeUserName}
@@ -65,7 +83,7 @@ class LoginTab extends React.Component {
                         fullWidth: true
                       }}
                   />
-                  <TextField                      
+                  <TextField className={classes.divider}                     
                       id={"password"}
                       placeholder="password"
                       onInput={this.onChangePassword}
@@ -79,7 +97,7 @@ class LoginTab extends React.Component {
                   <Button
                       type="submit"
                       className={classes.button}
-                  >Login
+                  >Create Account
                   </Button>
               </form>
           </Paper>
@@ -88,4 +106,4 @@ class LoginTab extends React.Component {
     }
 }
 
-export default withStyles(styles)(LoginTab);
+export default withStyles(styles)(CreateTab);
