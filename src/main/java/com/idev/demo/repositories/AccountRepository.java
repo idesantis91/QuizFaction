@@ -7,6 +7,8 @@ public interface AccountRepository extends MongoRepository<Account, String> {
 
     boolean existsByUsername(String username);
 
+    Account findByUsername(String username);
+
     void deleteByUsername(String username);
 
 }
