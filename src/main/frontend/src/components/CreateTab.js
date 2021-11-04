@@ -15,6 +15,7 @@ const styles = theme => ({
     justifyContent:"center",
     backgroundColor: "#96C3D7",
     alignItems:"center",
+    padding: "90px",
     borderRadius: "10px",
     minHeight: "500px",
     minWidth: "500px",
@@ -25,6 +26,7 @@ const styles = theme => ({
     justifyContent:"center",
     alignItems:"center",
     display: "flex",
+    paddingTop:"-200px",
     margin: "auto"
   }
 });
