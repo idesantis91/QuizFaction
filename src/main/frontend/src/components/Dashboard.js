@@ -19,14 +19,11 @@ function Dashboard() {
 
     return (
         <div className = "container">
-            
-            <h1 className = "text-center"> Employees List</h1>
-
+            <h1 className = "text-center">Faction Members</h1>
             <table className = "table table-striped">
                 <thead>
                     <tr>
-                        <th> Account Username</th>
-                        <th> Account Password</th>
+                        <th>Member</th>
                     </tr>
 
                 </thead>
@@ -35,12 +32,10 @@ function Dashboard() {
                         employees.map(
                                 employee =>
                                 <tr key = {employee.username}>
-                                    <td> {employee.username}</td>
-                                    <td> {employee.password}</td>
+                                    <td>{employee.username}</td>
                                 </tr>
                         )
                     }
-
                 </tbody>
 
 
