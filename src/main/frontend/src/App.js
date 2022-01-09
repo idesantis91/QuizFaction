@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import QuizTab from './components/QuizTab';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
           <li>
             <Link to="/FactionTab">Faction</Link>
           </li>
+          <li>
+            <Link to="/Quiz">Quiz</Link>
+          </li>
         </ul>
 
         <hr />
@@ -28,6 +32,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<CreateTab />}/>
           <Route exact path="/FactionTab" element={<Dashboard />}/>
+          <Route exact path="/Quiz" element={<QuizTab />}/>
         </Routes>
       </div>
     </Router>
